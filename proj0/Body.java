@@ -79,5 +79,20 @@ public class Body{
         }
         return netForceY;
     }
+/*
+    public double calcNetAccInX(){
+        double accInX=this.calcNetForceExertedByX()
 
+        return accInX;
+    }
+*/
+
+    public void update(double dt,double fX, double fY){
+        double accInX=fX/this.mass;
+        double accInY=fY/this.mass;
+        this.xxVel+=accInX*dt;
+        this.yyVel+=accInY*dt;
+        this.xxPos+=this.xxVel*dt;
+        this.yyPos+=this.yyVel*dt;
+    }
 }
